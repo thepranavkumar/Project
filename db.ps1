@@ -8,7 +8,7 @@ if [ "$mysql" = 'yes' ]; then
     fi
 
     # Configuring MySQL/MariaDB
-    wget $vestacp/mysql/$mycnf -O /etc/mysql/my.cnf
+    wget $edevcp/mysql/$mycnf -O /etc/mysql/my.cnf
     if [ "$release" != '16.04' ]; then
         mysql_install_db
     fi
@@ -28,9 +28,9 @@ if [ "$mysql" = 'yes' ]; then
 
     # Configuring phpMyAdmin
     if [ "$apache" = 'yes' ]; then
-        wget $vestacp/pma/apache.conf -O /etc/phpmyadmin/apache.conf
+        wget $edevcp/pma/apache.conf -O /etc/phpmyadmin/apache.conf
         ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf.d/phpmyadmin.conf
     fi
-    wget $vestacp/pma/config.inc.php -O /etc/phpmyadmin/config.inc.php
+    wget $edevcp/pma/config.inc.php -O /etc/phpmyadmin/config.inc.php
     chmod 777 /var/lib/phpmyadmin/tmp
 fi
