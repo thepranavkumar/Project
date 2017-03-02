@@ -1,5 +1,5 @@
 if [ "$vsftpd" = 'yes' ]; then
-    wget $vestacp/vsftpd/vsftpd.conf -O /etc/vsftpd.conf
+    wget $edevcp/vsftpd/vsftpd.conf -O /etc/vsftpd.conf
     update-rc.d vsftpd defaults
     service vsftpd start
     check_result $? "vsftpd start failed"
